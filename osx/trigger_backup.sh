@@ -51,7 +51,7 @@ else
             # Sleep for a few seconds to avoid notification and confirmation dialog
             # from popping up together. Nothing wrong in it, but simply avoids
             # too many things popping up to user at the same time.
-            sleep 4
+            sleep 2
 
             # Ask to start secondary backup
             if confirm_dialog "Start backup to secondary?"; then
