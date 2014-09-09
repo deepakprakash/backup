@@ -12,7 +12,9 @@
 	<string>/tmp/local.backup.err</string>
 	<key>StandardOutPath</key>
 	<string>/tmp/local.backup.out</string>
-	<key>StartOnMount</key>
-	<true/>
+	<key>WatchPaths</key>
+	<array>
+		<string>/Volumes</string>
+	</array>
 </dict>
 </plist>
