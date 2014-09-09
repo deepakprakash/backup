@@ -62,7 +62,7 @@ if cat $volume_list_diff | grep -Ex "$BACKUP_VOL_SECONDARY/|$BACKUP_VOL_PRIMARY/
 
         # Run the primary backup. All the sanity checks are done inside the
         # `backup` script. So no need to do it here.
-        if backup --primary --dry-run; then
+        if backup --primary; then
             # Successful
 
             # Show notification.
@@ -83,7 +83,7 @@ if cat $volume_list_diff | grep -Ex "$BACKUP_VOL_SECONDARY/|$BACKUP_VOL_PRIMARY/
                 if confirm_dialog "Start backup to secondary?"; then
                     # User clicked on 'OK'
 
-                    if backup --secondary --dry-run; then
+                    if backup --secondary; then
                         # Successful
 
                         # Show notification
