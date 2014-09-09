@@ -68,10 +68,8 @@ primary_backup () {
     fi
 
     local primary_options="--exclude='/*/Archive' --exclude='*.lrdata' --exclude='$backup_dir' --backup --backup-dir='$backup_dir'"
-    echo $primary_options
 
     echo "Starting primary backup.."
-
     eval "rsync $common_options $primary_options $primary_source $primary_dest"
 }
 
@@ -90,7 +88,6 @@ secondary_backup () {
     fi
 
     echo "Starting secondary backup.."
-
     eval "rsync $common_options $secondary_source $secondary_dest"
 }
 
