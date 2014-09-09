@@ -36,7 +36,7 @@ else
 
     # Run the primary backup. All the sanity checks are done inside the
     # `backup` script. So no need to do it here.
-    if backup --primary --dry-run; then
+    if backup --primary; then
         # Successful
 
         # Show notification.
@@ -57,7 +57,7 @@ else
             if confirm_dialog "Start backup to secondary?"; then
                 # User clicked on 'OK'
 
-                if backup --secondary --dry-run; then
+                if backup --secondary; then
                     # Successful
 
                     # Show notification
