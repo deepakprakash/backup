@@ -8,6 +8,6 @@ if cp -f trigger_backup.sh /usr/local/bin/; then
 
         launchctl unload ~/Library/LaunchAgents/local.backup.trigger.plist
         launchctl load ~/Library/LaunchAgents/local.backup.trigger.plist
-        echo "Installation complete."
+        echo "Backup Trigger Installation Complete."
     fi
 fi
