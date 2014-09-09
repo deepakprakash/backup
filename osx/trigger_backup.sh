@@ -26,6 +26,8 @@ lock_backup () {
     fi
 }
 
+sleep 5 # Wait for a while to make sure all the Volumes are mounted properly.
+
 volume_list_previous=/tmp/.backup_vol_list.previous
 volume_list_current=/tmp/.backup_vol_list.current
 volume_list_diff=/tmp/.backup_vol_list.diff
@@ -38,7 +40,7 @@ fi
 # List current volumes to .current. One on each line. Directories with a trailing '/'
 ls -1F /Volumes/ > $volume_list_current
 
-# Output the diff to .diff
+# Output the diff (only the new lines) to .diff
 eval "diff --unchanged-line-format= --old-line-format= --new-line-format='%L' $volume_list_previous $volume_list_current > $volume_list_diff"
 
 mv $volume_list_previous $volume_list_previous.old
